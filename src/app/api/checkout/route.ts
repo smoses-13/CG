@@ -2,8 +2,8 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-06-30.basil' // Use latest from stripe.com/docs/api
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+  apiVersion: '2025-06-30.basil', // Use the required Stripe API version
 });
 
 export async function POST() {
@@ -19,7 +19,7 @@ export async function POST() {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: `${process.env.NEXTAUTH_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: 'https://ebook-landing-a7dp43xfr-smoses-13s-projects.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: `${process.env.NEXTAUTH_URL}/`,
     });
 
