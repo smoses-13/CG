@@ -13,8 +13,9 @@ function DownloadContent() {
   return (
     <div>
       <h1>Download your eBook</h1>
-      <a href="https://www.youtube.com/watch?v=wYG3iv9qgHE" download>
-        <button>Download Book</button>
+      <a href="https://www.youtube.com/watch?v=wYG3iv9qgHE" target="_blank" rel="noopener noreferrer">
+  
+        <button>watch Video</button>
       </a>
     </div>
   );
